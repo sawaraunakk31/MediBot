@@ -1,9 +1,7 @@
+const express = require('express');
 const { googleLogin } = require('../controllers/authController');
 
-const router= require('express').Router();
+const Router= express.Router();
 
-router.get('/test', (req, res) => {
-    res.send('Auth route is working!');
-})
-router.post('/googe',googleLogin)
-module.exports = router;
+Router.get('/google',googleLogin)
+module.exports = Router;
