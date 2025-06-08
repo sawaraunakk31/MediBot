@@ -11,7 +11,7 @@ const terms = [
   'Nephrology', 'Hematology', 'Urology', 'Orthopedics'
 ];
 
-export default function LoginWithBackground() {
+const LoginWithBackground=()=> {
   const navigate = useNavigate();
   const [hovered, setHovered] = useState(null);
   const [showECG, setShowECG] = useState(false);
@@ -115,3 +115,4 @@ export default function LoginWithBackground() {
     </div>
   );
 }
+export default LoginWithBackground;
