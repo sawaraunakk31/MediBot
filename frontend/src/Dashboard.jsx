@@ -25,7 +25,7 @@ function Dashboard() {
     setChatLog(prev => [...prev, { role: 'user', text: message }]);
     setBotTyping(true);
     try {
-      const res = await axios.post('http://localhost:8501/chat', { message });
+      const res = await axios.post('http://127.0.0.1:8501/chat', { message });
       setTimeout(() => {
         setChatLog(prev => [...prev, { role: 'bot', text: res.data.response }]);
         setBotTyping(false);
