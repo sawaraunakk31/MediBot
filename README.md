@@ -47,9 +47,6 @@ An intelligent medical chatbot built using **LangChain**, **Hugging Face Transfo
 
 ## 🖼️ Screenshots
 
-You can include screenshots like this in your README:
-
-```md
 ### 🔐 Login Page
 ![Login Page](screenshots/login.png)
 
