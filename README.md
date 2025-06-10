@@ -1,4 +1,4 @@
-# 🩺 Medibot – Your AI-Powered Medical Chatbot
+# 🩺 MediBot – Your AI-Powered Medical Chatbot
 
 An intelligent medical chatbot built using **LangChain**, **Hugging Face Transformers**, **FAISS**, and **LLMs**, enhanced with modern **Google Authentication**, a **React frontend**, and **Express + MongoDB backend**. It provides intelligent, context-aware answers to medical queries using retrieval-augmented generation (RAG).
 
