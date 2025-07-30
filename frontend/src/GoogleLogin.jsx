@@ -16,26 +16,23 @@ const LoginWithBackground=()=> {
   const [hovered, setHovered] = useState(null);
   const [showECG, setShowECG] = useState(false);
 
-  const responseGoogle = async (authResult) => {
+  const googleLogin = useGoogleLogin({
+  onSuccess: async (tokenResponse) => {
     try {
-      if (authResult['code']) {
-        const result = await googleAuth(authResult.code);
-        const { email, name, image } = result.data.user;
-        const token = result.data.token;
-        const obj = { email, name, image, token };
-        localStorage.setItem('user-info', JSON.stringify(obj));
-        navigate('/dashboard');
-      }
+      const result = await googleAuth(tokenResponse.code);
+      const { email, name, image } = result.data.user;
+      const token = result.data.token;
+      const obj = { email, name, image, token };
+      localStorage.setItem('user-info', JSON.stringify(obj));
+      navigate('/dashboard');
     } catch (err) {
       console.error(err);
     }
-  };
+  },
+  onError: console.error,
+  flow: 'auth-code-client', // ✅ this tells Google to send code via postMessage
+});
 
-  const googleLogin = useGoogleLogin({
-    onSuccess: responseGoogle,
-    onError: responseGoogle,
-    flow: 'auth-code'
-  });
 
   // Trigger ECG on idle hover
   useEffect(() => {
